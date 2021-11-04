@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.365
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almanac-nonMaui", "Almanac-nonMaui\Almanac-nonMaui.csproj", "{69577ADB-C48D-4A54-B628-A209C4AFB9C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarCalc", "SolarCalc\SolarCalc.csproj", "{798B93C3-077E-4415-937D-F3A4AC1045F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69577ADB-C48D-4A54-B628-A209C4AFB9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69577ADB-C48D-4A54-B628-A209C4AFB9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69577ADB-C48D-4A54-B628-A209C4AFB9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69577ADB-C48D-4A54-B628-A209C4AFB9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798B93C3-077E-4415-937D-F3A4AC1045F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798B93C3-077E-4415-937D-F3A4AC1045F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798B93C3-077E-4415-937D-F3A4AC1045F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798B93C3-077E-4415-937D-F3A4AC1045F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C3DAC99-7D31-4EC3-B74E-59C88DF71215}
+	EndGlobalSection
+EndGlobal

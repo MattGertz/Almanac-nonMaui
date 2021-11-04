@@ -1,0 +1,89 @@
+﻿<Window x:Class="Almanac_nonMaui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Almanac_nonMaui"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="660" Width="400">
+    <StackPanel>
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="SkyBlue"/>
+                <GradientStop Color="Yellow" Offset="1"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <Label Content="Location information" FontWeight="Bold" FontSize="24" Foreground="Black" HorizontalAlignment="Center"/>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Margin="10" Grid.Row="0" Grid.Column="0" Content="Latitude" Foreground="Black" FontSize="12" VerticalAlignment="Center" />
+            <TextBox Margin="10" Grid.Row="0" Grid.Column="1" Name="cityLatitude" Text="47.6062" Foreground="Black" FontSize="12" TextChanged="OnLatitudeCompleted" VerticalAlignment="Center"/>
+            <Label Margin="10" Grid.Row="1" Grid.Column="0" Content="Longitude" Foreground="Black" FontSize="12" VerticalAlignment="Center" />
+            <TextBox Margin="10" Grid.Row="1" Grid.Column="1" Name="cityLongitude" Text="-122.3321" Foreground="Black" FontSize="12" TextChanged="OnLongitudeCompleted" VerticalAlignment="Center"/>
+            <Label Margin="10" Grid.Row="2" Grid.Column="0" Content="Longitude" Foreground="Black" FontSize="12" VerticalAlignment="Center" />
+            <ComboBox Margin="10" Grid.Row="2" Grid.Column="1" Name="cityTimeZone" Foreground="Black" FontSize="12" SelectionChanged="OnTimeZoneSelected" VerticalAlignment="Center"/>
+        </Grid>
+        <Button Content="Go!" Click="OnAnalyze" Width="100" Margin="12" />
+
+        <Label Name="labelSolarInformation" Content="Solar Information" Visibility="Hidden" FontWeight="Bold" FontSize="24" Foreground="Black" HorizontalAlignment="Center" />
+        <Grid Name="outputGrid" Visibility="Hidden" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Content="Local Time" Foreground="Black" />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="1" Grid.Column="0" FontWeight="Bold" Content="Solar altitude" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="2" Grid.Column="0" FontWeight="Bold" Content="Solar azimuth" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="3" Grid.Column="0" FontWeight="Bold" Content="Zenith time" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="4" Grid.Column="0" FontWeight="Bold" Content="Zenith altitude" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="5" Grid.Column="0" FontWeight="Bold" Content="Sunrise" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="6" Grid.Column="0" FontWeight="Bold" Content="Sunset" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="7" Grid.Column="0" FontWeight="Bold" Content="Total daylight" Foreground="Black"  />
+
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="0" Grid.Column="1" Name="cityTime" Foreground="Black" />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="1" Grid.Column="1" Name="solarAltitude" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="2" Grid.Column="1" Name="solarAzimuth" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="3" Grid.Column="1" Name="solarZenithTime" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="4" Grid.Column="1" Name="solarZenithAltitude" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="5" Grid.Column="1" Name="solarSunrise" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="6" Grid.Column="1" Name="solarSunset" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="7" Grid.Column="1" Name="solarDaylight" Foreground="Black"  />
+
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="9" Grid.Column="0" FontWeight="Bold" Content="Next solar event" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="10" Grid.Column="0" FontWeight="Bold" Content="Event zenith altitude" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="11" Grid.Column="0" FontWeight="Bold" Content="Event sunrise" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="12" Grid.Column="0" FontWeight="Bold" Content="Event sunset" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="13" Grid.Column="0" FontWeight="Bold" Content="Event total daylight" Foreground="Black"  />
+
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="9" Grid.Column="1" Name="solarNextEvent" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="10" Grid.Column="1" Name="solarZenithAltitudeEvent" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="11" Grid.Column="1" Name="solarSunriseEvent" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="12" Grid.Column="1" Name="solarSunsetEvent" Foreground="Black"  />
+            <Label VerticalAlignment="Center" FontSize="10" Grid.Row="13" Grid.Column="1" Name="solarDaylightEvent" Foreground="Black"  />
+        </Grid>
+    </StackPanel>
+</Window>

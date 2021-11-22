@@ -28,7 +28,8 @@
             <TextBox Margin="10" Grid.Row="0" Grid.Column="1" Name="cityLatitude" Text="47.6062" Foreground="Black" FontSize="12" TextChanged="OnLatitudeCompleted" VerticalAlignment="Center"/>
             <Label Margin="10" Grid.Row="1" Grid.Column="0" Content="Longitude" Foreground="Black" FontSize="12" VerticalAlignment="Center" />
             <TextBox Margin="10" Grid.Row="1" Grid.Column="1" Name="cityLongitude" Text="-122.3321" Foreground="Black" FontSize="12" TextChanged="OnLongitudeCompleted" VerticalAlignment="Center"/>
-            <Label Margin="10" Grid.Row="2" Grid.Column="0" Content="Longitude" Foreground="Black" FontSize="12" VerticalAlignment="Center" />
+            <Label Margin="10" Grid.Row="2" Grid.Column="0" Content="Time Zone
+                   " Foreground="Black" FontSize="12" VerticalAlignment="Center" />
             <ComboBox Margin="10" Grid.Row="2" Grid.Column="1" Name="cityTimeZone" Foreground="Black" FontSize="12" SelectionChanged="OnTimeZoneSelected" VerticalAlignment="Center"/>
         </Grid>
         <Button Content="Go!" Click="OnAnalyze" Width="100" Margin="12" />

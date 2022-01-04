@@ -11,9 +11,7 @@ namespace SolarCalc
             Longitude = longitude;
             CityTimeZoneID = timeZoneID;
 
-            // Not working on Android:
-            // CityTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(CityTimeZoneID);
-            CityTimeZoneInfo = FakeTimeZone.GetFakeTimeZoneInfo();
+            CityTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(CityTimeZoneID) ??  FakeTimeZone.GetFakeTimeZoneInfo(); ;
 
         }
         public string Name { get; private set; }

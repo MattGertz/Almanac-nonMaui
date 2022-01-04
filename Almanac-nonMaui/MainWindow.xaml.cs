@@ -110,9 +110,10 @@ namespace Almanac_nonMaui
 
 			TimeZoneInfo? cityTimeZoneInfo = null;
 			string? timeZoneID = "";
-			if (this.cityTimeZone.SelectedItem is not null)
+			if (this.cityTimeZone.SelectedItem is not null || this.cityTimeZone.Items.Count > 0)
 			{
-				timeZoneID = this.cityTimeZone.SelectedItem.ToString();
+				var tzItem = this.cityTimeZone.SelectedItem ?? this.cityTimeZone.Items.FirstOrDefault();
+				timeZoneID = ((TimeZoneInfo)tzItem).Id;
 				try
 				{
 					cityTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneID);
